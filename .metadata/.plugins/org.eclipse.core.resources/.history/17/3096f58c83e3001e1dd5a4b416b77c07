@@ -1,0 +1,40 @@
+package core.java.MultiThreading;
+
+
+class MyThread6 extends Thread{
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		System.out.println("Child starts execution");
+		for(int i=0; i<=5; i++) {
+			System.out.println("Child Thread");
+			System.out.println("Child going to sleep");
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				System.out.println("child got intrrupted");
+			}
+			
+		}
+		System.out.println("Child completed execution");
+		
+		
+	}
+}
+public class Intrrupting_Thread {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		MyThread6 t = new MyThread6();
+		t.start();
+		t.interrupt();
+		
+		for(int i=0; i<=5; i++) {
+			System.out.println("Main Thread");
+		}
+
+	}
+
+}

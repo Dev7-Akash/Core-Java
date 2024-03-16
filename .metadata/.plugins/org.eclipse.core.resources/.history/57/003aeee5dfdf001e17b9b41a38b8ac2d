@@ -1,0 +1,12 @@
+package core.java.IO;
+
+import java.io.IOException;
+
+public class BufferedReaderDemo {
+
+	public static void main(String[] args)throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

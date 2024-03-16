@@ -1,0 +1,24 @@
+package core.java.Serialization;
+
+import java.io.Serializable;
+
+class A implements Serializable{
+	B b = new B();
+}
+
+class B implements Serializable{
+	C c = new C();
+}
+
+class C implements Serializable{
+	int i = 70;;
+}
+
+public class ObjectGraphInSerialization {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

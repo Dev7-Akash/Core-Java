@@ -1,0 +1,5 @@
+package core.java.MultiThreading;
+
+public class DeadLockDemo3 {
+
+}

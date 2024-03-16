@@ -1,0 +1,12 @@
+package core.java.IO;
+
+import java.io.IOError;
+
+public class FileReaderDemo extends IOError {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

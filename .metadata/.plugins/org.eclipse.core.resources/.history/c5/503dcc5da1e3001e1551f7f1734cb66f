@@ -1,0 +1,10 @@
+package core.java.MultiThreading;
+
+public class DeadLockDemo2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

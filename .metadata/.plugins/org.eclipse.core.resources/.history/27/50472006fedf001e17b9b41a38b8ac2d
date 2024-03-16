@@ -1,0 +1,27 @@
+package core.java.Serialization;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+class Example1 implements Serializable{
+	private static final long serialVersionUID =1L;
+	int i =10;
+	int j=20;
+	
+}
+
+
+class Sender{
+	
+	public static void main(String[] args)throws Exception {
+		Example1 e= new Example1();
+		FileOutputStream fos = new FileOutputStream("abc.ser");
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		oos.writeObject(e);
+		
+	}
+}
+

@@ -1,0 +1,45 @@
+package core.java.Serialization;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+class Animal {
+	int i = 10;
+	Animal(){
+		System.out.println("Animal Constructor Called");
+	}
+	
+}
+
+class Lion extends Animal implements Serializable{
+	int j = 20;
+	Lion(){
+		System.out.println("Lion Constructor Called");
+	}
+}
+
+public class SerializationWrtInheritance2 {
+
+	public static void main(String[] args)throws Exception {
+		// TODO Auto-generated method stub
+		Lion l = new Lion();
+		l.i=888;
+		l.j=999;
+		System.out.println(l.i+"..........."+l.j);
+		FileOutputStream fos = new FileOutputStream("abc.ser");
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		oos.writeObject(l);
+		
+		System.out.println("Deserialization Started");
+		FileInputStream fis = new FileInputStream("abc.ser");
+		ObjectInputStream ois = new ObjectInputStream(fis);
+		Lion l1 = (Lion)ois.readObject();
+		
+		System.out.println(l1.i+".........."+l1.j);
+
+	}
+
+}

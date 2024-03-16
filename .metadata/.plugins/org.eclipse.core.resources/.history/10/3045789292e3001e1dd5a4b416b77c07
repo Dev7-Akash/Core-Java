@@ -1,0 +1,56 @@
+package core.java.MultiThreading;
+
+
+class Print{
+	
+	public synchronized void wish(String name) {
+		
+		for(int i=0; i<=5; i++) {
+			System.out.print("Good Morning :");
+			
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			System.out.println(name);
+		}
+	}
+}
+
+class MyThread9 extends Thread{
+	Print p;
+	String name;
+	
+	Print(Print p, String s){
+		this.name=s;
+		this.d=d;
+	}
+	
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		p.wish(name);
+	}
+}
+
+
+public class ClassLevelSynchronization {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Print d= new Print();
+		
+       MyThread8 t1= new MyThread8(d, "Rohit");
+       
+       MyThread8 t2= new MyThread8(d, "Virat");
+       
+       t1.start();
+       t2.start();
+       
+	}
+
+}
